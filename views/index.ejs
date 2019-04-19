@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Blog Posts List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Check out all of my past blog posts!</h1>
+        <p>Create a new post <a href="/create">here</a></p>
+        <%if (blogposts.length == 0 ) {%>
+            <p>Oh wait...we don't have any :/</p>
+        <% } %>
+        <ul>
+            <%for (var i in blogposts){%>
+            <li>
+                <h3><%=blogposts[i].title%></h3>
+                <p><%=blogposts[i].content%></p>
+            </li>
+            <%}%>
+        </ul>
+    </div>
+</body>
+</html>
