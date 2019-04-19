@@ -70,15 +70,6 @@ app.post("/create", (req, res) => {
   });
 });
 
-app.get("/blogposts/:title", (req, res) => {
-  console.log('hi');
-  var getDoc = dbref.doc(req.params.title).get()
-  .then(doc => {
-    console.log('Document data:', doc.data());
-    res.render("detail", { blogpost: doc.data() })
-  });
-});
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
